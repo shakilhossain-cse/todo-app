@@ -2,17 +2,19 @@
 import { ref,defineEmits } from "vue";
 const todoInput = ref("");
 const inputError = ref("");
-const emit = defineEmits(['AddTodo'])
+const emit = defineEmits(['addTodo'])
 
 const handelSubmit = () => {
   if (!todoInput.value) {
     inputError.value = "input field cannot be empty";
     return;
   }
-  emit('AddTodo', todoInput.value)
+  emit('addTodo', todoInput.value)
   todoInput.value = ""
   inputError.value = "";
 };
+
+
 
 </script>
 
